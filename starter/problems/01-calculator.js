@@ -12,18 +12,35 @@ Each of the above methods should return the total.
 
 Examples:
 
-let calculator = new Calculator();
-calculator.add(50); // => returns 50
-calculator.subtract(35); // => returns 15
-calculator.multiply(10); // => returns 150
-calculator.divide(5); // => returns 30
-calculator.total // => returns 30
-
 ***********************************************************************/
 
 function Calculator() {
 	this.total = 0;
 }
 
+Calculator.prototype.add = function(num) {
+	this.total += num;
+	return this.total;
+}
+Calculator.prototype.subtract = function(num) {
+	this.total -= num;
+	return this.total;
+}
+Calculator.prototype.multiply = function(num) {
+	this.total *= num;
+	return this.total;
+}
+Calculator.prototype.divide = function(num) {
+	this.total /= num;
+	return this.total;
+}
+
+
+let calculator = new Calculator();
+console.log(calculator.add(50)); // => returns 50
+console.log(calculator.subtract(35)); // => returns 15
+console.log(calculator.multiply(10)); // => returns 150
+console.log(calculator.divide(5)); // => returns 30
+console.log(calculator.total) // => returns 30
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = Calculator;
