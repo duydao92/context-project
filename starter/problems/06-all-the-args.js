@@ -1,4 +1,4 @@
-/*********************************************************************** 
+/***********************************************************************
 
 Write a function named `allTheArgs`. This function will intake a function and
 multiple arguments and will return a function. When the function
@@ -33,7 +33,11 @@ console.log(bowSandy("Joe", "Nico")); // prints "You bowed to Sandy and Joe and 
 
 ***********************************************************************/
 
-// your code here!
+function allTheArgs (cb, ...args) {
+  return (...args2) => {
+    return cb(...args, ...args2)
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
