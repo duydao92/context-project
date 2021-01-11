@@ -1,9 +1,16 @@
 /***********************************************************************
 Write a function named `changeContext(function, object)` that will accept a
 function and an object. The changeContext function should return the result of
-the function being invoked with the passed in object as it's context. 
+the function being invoked with the passed in object as it's context.
 
 Take careful note of how this is invoked:
+
+
+***********************************************************************/
+
+function changeContext (cb, object){
+  return cb.bind(object)();
+}
 
 let map = {
   secret: "I don't know where I'm going",
@@ -19,11 +26,6 @@ function getSecret() {
 
 console.log(changeContext(getSecret, bat)); // prints "I'm scared of the dark"
 console.log(changeContext(getSecret, map)); // prints "I don't know where I'm going"
-
-***********************************************************************/
-
-// your code here!
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
